@@ -1,276 +1,392 @@
 <!DOCTYPE html>
 <html lang="en" class="light">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Automa8 – Mindful Wealth Tracking</title>
-  <meta name="description" content="Automa8 is the streamlined workflow engine for your financial life. Track wealth without the noise—built for privacy, not for profit."/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="css/styles.css"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Automa8 – Mindful Wealth Tracking</title>
+    <meta name="description" content="Automa8 gives you the clarity you need without compromising your privacy." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
 </head>
+
 <body>
 
-<!-- ═══════════════════════════════ HEADER ═══════════════════════════════ -->
-<header class="site-header" id="site-header">
-  <div class="header-inner">
-    <a href="index.html" class="logo-link">
-      <span class="material-symbols-outlined logo-icon" style="font-variation-settings:'FILL' 1">account_balance_wallet</span>
-      <span class="logo-text">Automa8</span>
-    </a>
-    <nav class="main-nav" id="main-nav">
-      <a href="features.html">Features</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="about.html">About</a>
-      <a href="blog.html">Blog</a>
-    </nav>
-    <div class="header-actions">
-      <button class="btn-primary" onclick="openWaitlist()">Get Started</button>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-</header>
-
-<!-- ══════════════════════════════ HERO ══════════════════════════════════ -->
-<section class="hero-section">
-  <div class="container">
-    <div class="hero-content">
-      <span class="badge">Free Tracking App</span>
-      <h1 class="hero-title">Take back control of your<br/><span class="text-gradient">Financial Journey</span></h1>
-      <p class="hero-subtitle">Stop juggling spreadsheets. Automa8 brings everything you need to master your finances—in one calm, private place.</p>
-      <div class="hero-cta">
-        <button class="btn-primary btn-large" onclick="openWaitlist()">Start for Free →</button>
-        <a href="features.html" class="btn-ghost">See Features</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Decorative floating cards -->
-  <div class="hero-visual">
-    <div class="float-card card-1">
-      <div class="card-label">Net Worth</div>
-      <div class="card-value">$124,500</div>
-      <div class="card-trend up">↑ 8.4%</div>
-    </div>
-    <div class="float-card card-2">
-      <div class="card-label">Monthly Savings</div>
-      <div class="card-value">$2,340</div>
-      <div class="card-trend up">↑ 12%</div>
-    </div>
-    <div class="float-card card-3">
-      <div class="card-label">Investments</div>
-      <div class="card-value">$87,200</div>
-      <div class="card-trend down">↓ 1.2%</div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════ FEATURE HIGHLIGHTS ══════════════════════════ -->
-<section class="features-preview section">
-  <div class="container">
-    <div class="section-header">
-      <span class="badge">Built for You</span>
-      <h2>Everything you need to reach your goals</h2>
-    </div>
-    <div class="features-grid">
-
-      <div class="feature-card">
-        <div class="feature-icon">
-          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">trending_up</span>
+    <!-- HEADER -->
+    <header class="site-header" id="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo-link">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#10b77f" />
+                    <path d="M2 17L12 22L22 17" stroke="#10b77f" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M2 12L12 17L22 12" stroke="#10b77f" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                <span class="logo-text">Automa8</span>
+            </a>
+            <nav class="main-nav" id="main-nav">
+                <a href="features.html">Product</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="about.html">About</a>
+            </nav>
+            <div class="header-actions">
+                <button class="btn-primary" onclick="openWaitlist()">Join Waitlist</button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
-        <h3>Net Worth Tracking</h3>
-        <p>See your complete financial picture in real time. Assets, liabilities, investments—all in one dashboard.</p>
-      </div>
+    </header>
 
-      <div class="feature-card">
-        <div class="feature-icon">
-          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">receipt_long</span>
+    <main>
+        <!-- HERO -->
+        <section class="hero-section text-center">
+            <div class="container container-sm">
+                <span class="badge badge-subtle"><span class="badge-dot"></span> OPEN-SOURCE WEALTH TRACKING</span>
+                <h1 class="hero-title">Take back control of your<br /><span class="text-primary-color">Financial
+                        Journey</span></h1>
+                <p class="hero-subtitle">A simple, private way to track and grow your wealth. No bank logins, no API
+                    tokens, just you and your goals. Your money stays where it is — we just help you see it clearly.</p>
+
+                <form class="hero-email-form" onsubmit="handleHeroSubmit(event)">
+                    <input type="email" placeholder="Enter your email" required />
+                    <button type="submit" class="btn-primary">Join Waitlist</button>
+                </form>
+                <p class="hero-micro">No credit card required. 100% weather anxiety at the top.</p>
+            </div>
+        </section>
+
+        <!-- 3 CARDS SECTION -->
+        <section class="section pt-0">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Stop juggling spreadsheets. Automa8 brings everything under one roof.</h2>
+                    <p>Spreadsheets are messy, and automated apps are invasive. Automa8 gives you the clarity you need
+                        without compromising your privacy.</p>
+                </div>
+
+                <div class="grid-3">
+                    <div class="card-soft observe">
+                        <div class="card-icon-small"><span class="material-symbols-outlined">visibility</span></div>
+                        <h3>Total Visibility</h3>
+                        <p>Get a bird's-eye view of your assets and liabilities in one place. Manual entry means you see
+                            exactly what you want to see, without the clutter of automatic syncs.</p>
+                    </div>
+                    <div class="card-soft observe">
+                        <div class="card-icon-small"><span class="material-symbols-outlined">track_changes</span></div>
+                        <h3>Intentional Progress</h3>
+                        <p>Set meaningful goals and see your progress track over time. Visualizing your milestones keeps
+                            you mindful and connected to your financial goals.</p>
+                    </div>
+                    <div class="card-soft observe">
+                        <div class="card-icon-small"><span class="material-symbols-outlined">shield_lock</span></div>
+                        <h3>Absolute Privacy</h3>
+                        <p>No bank logins. No API tokens. No data selling. Since you enter the data, your financial life
+                            stays completely disconnected and 100% private.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ALTERNATING FEATURES -->
+        <section class="section bg-white features-alternating">
+            <div class="container">
+
+                <!-- Feature 1 -->
+                <div class="feature-row observe">
+                    <div class="feature-text">
+                        <span class="badge badge-light-green">EASY ONBOARDING</span>
+                        <h2>Everything you need to reach your goals</h2>
+                        <p>Get a bird's-eye view of your entire financial life. No more switching between five different
+                            bank apps. Just one clean space to visualize where you are and where you're going.</p>
+                        <ul class="feature-list">
+                            <li><span class="material-symbols-outlined icon-check">check_circle</span> Automatic account
+                                aggregation</li>
+                            <li><span class="material-symbols-outlined icon-check">check_circle</span> Portfolio
+                                performance benchmarking</li>
+                        </ul>
+                    </div>
+                    <div class="feature-image">
+                        <div class="mock-ui">
+                            <div class="mock-ui-header">Dashboard</div>
+                            <div class="mock-ui-body">
+                                <div class="mock-bar"></div>
+                                <div class="mock-bar short"></div>
+                                <div class="mock-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-row reverse observe">
+                    <div class="feature-text">
+                        <span class="badge badge-light-green">TIME SAVING</span>
+                        <h2>Simple tools for mindful tracking</h2>
+                        <p>Keep track of your fixed deposits across different banks manually. It only takes a minute,
+                            but the peace of mind of knowing exactly when your next maturity hits is priceless.</p>
+                        <ul class="feature-list">
+                            <li><span class="material-symbols-outlined icon-check">check_circle</span> Automated
+                                maturity alerts</li>
+                            <li><span class="material-symbols-outlined icon-check">check_circle</span> Tax implication
+                                summaries</li>
+                        </ul>
+                    </div>
+                    <div class="feature-image">
+                        <div class="mock-ui">
+                            <div class="mock-ui-header">Fixed Deposits</div>
+                            <div class="mock-ui-body">
+                                <div class="mock-table-row"></div>
+                                <div class="mock-table-row"></div>
+                                <div class="mock-table-row"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-row observe">
+                    <div class="feature-text">
+                        <span class="badge badge-light-green">SECURE VAULT</span>
+                        <h2>Organize what matters most</h2>
+                        <p>Whether it's your 'Dream Home' fund or 'Kid's Education,' create visual boards that help you
+                            stay motivated. It's about taking action on your dreams, not just looking at numbers.</p>
+                        <ul class="feature-list">
+                            <li><span class="material-symbols-outlined icon-check">check_circle</span> Goal-based
+                                tracking modules</li>
+                            <li><span class="material-symbols-outlined icon-check">check_circle</span> Secure document
+                                vault</li>
+                        </ul>
+                    </div>
+                    <div class="feature-image">
+                        <div class="mock-ui">
+                            <div class="mock-ui-header">Financial Boards</div>
+                            <div class="mock-ui-body">
+                                <div class="mock-cards">
+                                    <div class="mock-card-small"></div>
+                                    <div class="mock-card-small"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4 CARDS - PRIVACY -->
+        <section class="section pt-0">
+            <div class="container">
+                <div class="section-header text-center observe">
+                    <h2>True privacy by design. You're in control.</h2>
+                    <p>We don't ask for tedious access or bank passwords. We believe your data belongs to you.</p>
+                </div>
+
+                <div class="grid-4">
+                    <div class="card-outline observe">
+                        <div class="card-icon-line"><span class="material-symbols-outlined">public_off</span></div>
+                        <h4>Zero Bank Logins</h4>
+                        <p>We don't ask for your passwords or sync with your bank. You enter your data, and we keep it
+                            safe.</p>
+                    </div>
+                    <div class="card-outline observe">
+                        <div class="card-icon-line"><span class="material-symbols-outlined">self_improvement</span>
+                        </div>
+                        <h4>Mindful Tracking</h4>
+                        <p>Manual entry isn't a chore—it's a habit. Being closer to your numbers helps you make better
+                            decisions.</p>
+                    </div>
+                    <div class="card-outline observe">
+                        <div class="card-icon-line"><span class="material-symbols-outlined">insert_chart</span></div>
+                        <h4>Visualizing Targets</h4>
+                        <p>Instead of automated budgets, we give you the tools to set clear targets and watch yourself
+                            reach them.</p>
+                    </div>
+                    <div class="card-outline observe">
+                        <div class="card-icon-line"><span class="material-symbols-outlined">account_balance</span></div>
+                        <h4>Legacy Planning</h4>
+                        <p>We don't ask for tedious access or bank passwords. We believe your data belongs to you.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRICING -->
+        <section class="section bg-white" id="pricing">
+            <div class="container">
+                <div class="section-header text-center observe">
+                    <h2>Transparent Pricing</h2>
+                    <p>Fair prices for tools that help you grow. No hidden catches.</p>
+                </div>
+
+                <div class="pricing-deck observe">
+                    <div class="pr-card">
+                        <h4>Basic</h4>
+                        <p class="pr-desc">Fair prices for tools that help you grow. No hidden catches.</p>
+                        <div class="pr-price">₹99<span>/mo</span></div>
+                        <ul class="pr-features">
+                            <li><span class="material-symbols-outlined icon-check-small">check</span> Same 14 days, pure
+                                zen</li>
+                            <li><span class="material-symbols-outlined icon-check-small">check</span> Daily net worth
+                                sync</li>
+                            <li><span class="material-symbols-outlined icon-check-small">check</span> Essential
+                                Analytics</li>
+                        </ul>
+                        <button class="btn-outline btn-full" onclick="openWaitlist()">Join Waitlist</button>
+                    </div>
+
+                    <div class="pr-card popular">
+                        <div class="badge-popular">Most Popular</div>
+                        <h4>Full Access</h4>
+                        <p class="pr-desc">Fair prices for tools that help you grow. No hidden catches.</p>
+                        <div class="pr-price">₹199<span>/mo</span></div>
+                        <ul class="pr-features">
+                            <li><span class="material-symbols-outlined icon-check-small">check</span> Unlimited API
+                                Connections</li>
+                            <li><span class="material-symbols-outlined icon-check-small">check</span> Real-time
+                                Portfolio sync</li>
+                            <li><span class="material-symbols-outlined icon-check-small">check</span> Tax Loss
+                                Harvesting Tools</li>
+                            <li><span class="material-symbols-outlined icon-check-small">check</span> Priority 24/7
+                                Support</li>
+                        </ul>
+                        <button class="btn-primary btn-full" onclick="openWaitlist()">Join Waitlist</button>
+                    </div>
+
+                    <div class="pr-card">
+                        <h4>Custom / White-Labeled</h4>
+                        <p class="pr-desc">Built for financial advisors.</p>
+                        <div class="pr-price-text">Custom Pricing</div>
+                        <ul class="pr-features">
+                            <li><span class="material-symbols-outlined icon-check-small">check</span> White labelled
+                                deployment</li>
+                            <li><span class="material-symbols-outlined icon-check-small">check</span> Custom branding
+                            </li>
+                            <li><span class="material-symbols-outlined icon-check-small">check</span> Personalized views
+                            </li>
+                        </ul>
+                        <button class="btn-outline btn-full" onclick="openWaitlist()">Contact Us</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA BLOCK -->
+        <section class="section pt-0">
+            <div class="container">
+                <div class="cta-box observe text-center">
+                    <h2>Join 1,200+ mindful savers today</h2>
+                    <p>Start your journey toward financial clarity and peace of mind with a<br />community that values
+                        privacy as much as you do.</p>
+                    <button class="btn-primary-invert" onclick="openWaitlist()">Join Waitlist</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#10b77f" />
+                        <path d="M2 17L12 22L22 17" stroke="#10b77f" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M2 12L12 17L22 12" stroke="#10b77f" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <span class="logo-text">Automa8</span>
+                </a>
+                <p class="footer-tagline">Automating the web for independent builders and creators.</p>
+                <p class="footer-copy">© 2026 Automa8 Inc. Built with love by makers.</p>
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <a href="#">Changelog</a>
+                    <a href="#">Documentation</a>
+                    <a href="#">Integrations</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Community</h4>
+                    <a href="#">Discord</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">Showcase</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Security</a>
+                </div>
+            </div>
         </div>
-        <h3>Mindful Budgeting</h3>
-        <p>Organize what matters most. Simple tools for mindful tracking without overwhelming complexity.</p>
-      </div>
+    </footer>
 
-      <div class="feature-card">
-        <div class="feature-icon">
-          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">lock</span>
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modal-overlay" onclick="closeWaitlist(event)">
+        <div class="modal-card" id="modal-card">
+            <button class="modal-close" onclick="closeWaitlist()">×</button>
+            <div class="modal-icon-top">
+                <span class="material-symbols-outlined">auto_awesome</span>
+            </div>
+            <h2 class="modal-title">Join the Waitlist</h2>
+            <p class="modal-sub">Be the first to experience the future of<br />workflow automation.</p>
+
+            <form class="modal-form" id="waitlist-form" onsubmit="handleWaitlist(event)">
+                <div class="form-group">
+                    <label>FULL NAME</label>
+                    <div class="input-wrap">
+                        <span class="material-symbols-outlined input-icon">person</span>
+                        <input type="text" placeholder="John Doe" required id="wl-name" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>EMAIL ADDRESS</label>
+                    <div class="input-wrap">
+                        <span class="material-symbols-outlined input-icon">mail</span>
+                        <input type="email" placeholder="john@example.com" required id="wl-email" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>PREFERRED PLAN</label>
+                    <div class="select-wrap">
+                        <span class="material-symbols-outlined input-icon">layers</span>
+                        <select id="wl-plan">
+                            <option>Select your plan</option>
+                            <option>Basic</option>
+                            <option>Full Access</option>
+                        </select>
+                        <span class="material-symbols-outlined select-arrow">expand_more</span>
+                    </div>
+                </div>
+                <button type="submit" class="btn-primary btn-full mt-2">Join Waitlist <span
+                        class="material-symbols-outlined style-small">arrow_forward</span></button>
+                <p class="modal-note">No credit card required for waitlist</p>
+            </form>
+
+            <div class="modal-success" id="modal-success" style="display:none">
+                <span class="material-symbols-outlined success-icon">check_circle</span>
+                <h3>You're on the list!</h3>
+                <p>We'll reach out when your spot is ready.</p>
+            </div>
         </div>
-        <h3>Privacy First</h3>
-        <p>Your data belongs to you. No intrusive bank connections, no marketing jargon, zero data selling.</p>
-      </div>
+    </div>
 
-      <div class="feature-card">
-        <div class="feature-icon">
-          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">auto_graph</span>
-        </div>
-        <h3>Smart Automation</h3>
-        <p>Drag-and-drop workflows that connect your financial life. Stop writing boilerplate for repetitive tasks.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═════════════════════════ PHILOSOPHY SECTION ════════════════════════ -->
-<section class="philosophy-section section">
-  <div class="container">
-    <div class="two-col">
-      <div class="col-text">
-        <span class="badge">Our Philosophy</span>
-        <h2>Mindful wealth tracking.</h2>
-        <p class="accent-text">Built for privacy, not for profit.</p>
-        <p>Automa8 was born out of a simple need: a way to track wealth without the noise. We believe your financial data belongs to you, not a corporate database.</p>
-        <p>No intrusive bank connections, no marketing jargon, and zero data selling. Just a clean, quiet space to see your progress mindfully and intentionally.</p>
-      </div>
-      <div class="col-image">
-        <img src="img/forest.jpg" alt="Forest – mindful and intentional" class="round-image" onerror="this.style.background='linear-gradient(135deg,#10b77f22,#10b77f55)';this.style.borderRadius='16px';this.style.minHeight='300px'"/>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════ PRICING TEASER ═══════════════════════ -->
-<section class="pricing-teaser section">
-  <div class="container">
-    <div class="section-header">
-      <span class="badge">Transparent Pricing</span>
-      <h2>Simple plans, no surprises.</h2>
-      <p>Start free and upgrade when you need more power.</p>
-    </div>
-    <div class="pricing-grid">
-      <div class="pricing-card">
-        <div class="plan-name">Free</div>
-        <div class="plan-price">$0<span>/mo</span></div>
-        <ul class="plan-features">
-          <li><span class="material-symbols-outlined check">check_circle</span>Up to 5 accounts</li>
-          <li><span class="material-symbols-outlined check">check_circle</span>Basic net worth</li>
-          <li><span class="material-symbols-outlined check">check_circle</span>Manual entry</li>
-        </ul>
-        <button class="btn-outline" onclick="openWaitlist()">Get Started</button>
-      </div>
-      <div class="pricing-card featured">
-        <div class="plan-badge">Popular</div>
-        <div class="plan-name">Plus</div>
-        <div class="plan-price">$9<span>/mo</span></div>
-        <ul class="plan-features">
-          <li><span class="material-symbols-outlined check">check_circle</span>Unlimited accounts</li>
-          <li><span class="material-symbols-outlined check">check_circle</span>Advanced analytics</li>
-          <li><span class="material-symbols-outlined check">check_circle</span>Automation flows</li>
-          <li><span class="material-symbols-outlined check">check_circle</span>API access</li>
-        </ul>
-        <button class="btn-primary" onclick="openWaitlist()">Join Waitlist</button>
-      </div>
-      <div class="pricing-card">
-        <div class="plan-name">Explorer</div>
-        <div class="plan-price">$19<span>/mo</span></div>
-        <ul class="plan-features">
-          <li><span class="material-symbols-outlined check">check_circle</span>Everything in Plus</li>
-          <li><span class="material-symbols-outlined check">check_circle</span>Priority support</li>
-          <li><span class="material-symbols-outlined check">check_circle</span>Custom integrations</li>
-          <li><span class="material-symbols-outlined check">check_circle</span>Team sharing</li>
-        </ul>
-        <button class="btn-outline" onclick="openWaitlist()">Get Started</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════ CTA BANNER ═══════════════════════════════ -->
-<section class="cta-banner">
-  <div class="container">
-    <h2>Join 1,200+ mindful savers today</h2>
-    <p>Early access slots are limited. Be the first to experience the future of wealth tracking.</p>
-    <div class="cta-actions">
-      <button class="btn-primary btn-large" onclick="openWaitlist()">Start for Free →</button>
-      <button class="btn-ghost-white" onclick="openWaitlist()">Book a Demo</button>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="footer-brand">
-      <a href="index.html" class="logo-link logo-link-footer">
-        <span class="material-symbols-outlined logo-icon" style="font-variation-settings:'FILL' 1">account_balance_wallet</span>
-        <span class="logo-text">Automa8</span>
-      </a>
-      <p>© 2026 Automa8. Privacy first.</p>
-    </div>
-    <div class="footer-links">
-      <div class="footer-col">
-        <h4>Product</h4>
-        <a href="features.html">Features</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="blog.html">Blog</a>
-      </div>
-      <div class="footer-col">
-        <h4>Community</h4>
-        <a href="#">Twitter / X</a>
-        <a href="#">Discord</a>
-        <a href="#">GitHub</a>
-      </div>
-      <div class="footer-col">
-        <h4>Legal</h4>
-        <a href="#">Terms</a>
-        <a href="#">Privacy</a>
-        <a href="#">Twitter / X</a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<!-- ══════════════════════════ WAITLIST MODAL ════════════════════════════ -->
-<div class="modal-overlay" id="modal-overlay" onclick="closeWaitlist(event)">
-  <div class="modal-card" id="modal-card">
-    <button class="modal-close" onclick="closeWaitlist()">×</button>
-    <div class="modal-logo">
-      <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;color:#10b77f;font-size:2rem">account_balance_wallet</span>
-    </div>
-    <h2 class="modal-title">Join the Waitlist</h2>
-    <p class="modal-sub">Be the first to experience the future of workflow automation.<br/>Early access slots are limited.</p>
-    <form class="modal-form" id="waitlist-form" onsubmit="handleWaitlist(event)">
-      <div class="form-group">
-        <label>FULL NAME</label>
-        <div class="input-wrap">
-          <span class="material-symbols-outlined input-icon">person</span>
-          <input type="text" placeholder="John Doe" required id="wl-name"/>
-        </div>
-      </div>
-      <div class="form-group">
-        <label>EMAIL ADDRESS</label>
-        <div class="input-wrap">
-          <span class="material-symbols-outlined input-icon">mail</span>
-          <input type="email" placeholder="john@example.com" required id="wl-email"/>
-        </div>
-      </div>
-      <div class="form-group">
-        <label>PREFERRED PLAN</label>
-        <div class="select-wrap">
-          <span class="material-symbols-outlined input-icon">star</span>
-          <select id="wl-plan">
-            <option value="" disabled selected>Select your plan</option>
-            <option>Free</option>
-            <option>Plus</option>
-            <option>Explorer</option>
-          </select>
-          <span class="material-symbols-outlined select-arrow">expand_more</span>
-        </div>
-      </div>
-      <button type="submit" class="btn-primary btn-full">Join Waitlist →</button>
-      <p class="modal-note">No credit card required for waitlist</p>
-    </form>
-    <div class="modal-success" id="modal-success" style="display:none">
-      <span class="material-symbols-outlined success-icon" style="font-variation-settings:'FILL' 1">check_circle</span>
-      <h3>You're on the list!</h3>
-      <p>We'll reach out when your spot is ready.</p>
-    </div>
-  </div>
-</div>
-
-<script src="js/main.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        function handleHeroSubmit(e) {
+            e.preventDefault();
+            openWaitlist();
+        }
+    </script>
 </body>
+
 </html>
