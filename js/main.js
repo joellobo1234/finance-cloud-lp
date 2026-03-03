@@ -44,10 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-  document.querySelectorAll(
-    '.feature-card, .pricing-card, .principle-card, .blog-card, .feature-block, .faq-item, .float-card, .philosophy-section .two-col, .cta-banner'
-  ).forEach(el => {
-    el.classList.add('observe');
+  document.querySelectorAll('.observe').forEach(el => {
     observer.observe(el);
   });
 

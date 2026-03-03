@@ -14,13 +14,67 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css" />
+    <style>
+        .home-footer {
+            background: #f3f4f6;
+            border-top: 1px solid #e5e7eb;
+            padding: 2.2rem 1.5rem 1rem;
+        }
+
+        .home-footer-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        .home-footer .logo-text {
+            color: #111827;
+        }
+
+        .home-footer-copy-text {
+            font-size: 0.75rem;
+            color: #9ca3af;
+            line-height: 1.6;
+            max-width: 300px;
+            margin-top: 0.5rem;
+        }
+
+        .home-footer-col h4 {
+            font-size: 0.78rem;
+            color: #111827;
+            margin-bottom: 0.5rem;
+        }
+
+        .home-footer-col a {
+            display: block;
+            font-size: 0.8rem;
+            color: #6b7280;
+            margin-bottom: 0.35rem;
+        }
+
+        .home-footer-bottom {
+            margin-top: 1.5rem;
+            padding-top: 0.8rem;
+            border-top: 1px solid #e5e7eb;
+            font-size: 0.72rem;
+            color: #9ca3af;
+        }
+
+        @media (max-width: 720px) {
+            .home-footer-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
     <header class="site-header" id="site-header">
         <div class="header-inner">
-            <a href="index.html" class="logo-link">
+            <a href="home.html" class="logo-link">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#10b77f" />
                     <path d="M2 17L12 22L22 17" stroke="#10b77f" stroke-width="2" stroke-linecap="round"
@@ -31,12 +85,13 @@
                 <span class="logo-text">Automa8</span>
             </a>
             <nav class="main-nav" id="main-nav">
+                <a href="home.html#product">Product</a>
+                <a href="home.html#pricing">Pricing</a>
                 <a href="features.html" class="active">Features</a>
-                <a href="about.html">About</a>
-                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
             </nav>
             <div class="header-actions">
-                <button class="btn-primary" onclick="openWaitlist()">Get Started</button>
+                <button class="btn-primary" onclick="openWaitlist()">Join Waitlist</button>
                 <button class="hamburger" id="hamburger"
                     aria-label="Toggle menu"><span></span><span></span><span></span></button>
             </div>
@@ -218,10 +273,11 @@
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <a href="index.html" class="logo-link">
+    <footer class="home-footer">
+        <div class="container">
+            <div class="home-footer-grid">
+                <div>
+                    <a href="home.html" class="logo-link">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#10b77f" />
                         <path d="M2 17L12 22L22 17" stroke="#10b77f" stroke-width="2" stroke-linecap="round"
@@ -231,20 +287,18 @@
                     </svg>
                     <span class="logo-text">Automa8</span>
                 </a>
-                <p class="footer-tagline">Automating the web for independent builders and creators.</p>
-                <p class="footer-copy">© 2026 Automa8 Inc. Built with love by makers.</p>
-            </div>
-            <div class="footer-links">
-                <div class="footer-col">
-                    <h4>Product</h4><a href="#">Changelog</a><a href="#">Documentation</a><a href="#">Integrations</a>
+                    <p class="home-footer-copy-text">The world's most advanced wealth tracking platform for modern investors. Built for privacy, speed, and precision.</p>
                 </div>
-                <div class="footer-col">
-                    <h4>Community</h4><a href="#">Discord</a><a href="#">Twitter</a><a href="#">Showcase</a>
+                <div class="home-footer-col">
+                    <h4>Product</h4>
+                    <a href="features.html">Features</a>
                 </div>
-                <div class="footer-col">
-                    <h4>Legal</h4><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Security</a>
+                <div class="home-footer-col">
+                    <h4>Company</h4>
+                    <a href="contact.html">Contact</a>
                 </div>
             </div>
+            <div class="home-footer-bottom">© 2024 WealthStack Inc. All rights reserved.</div>
         </div>
     </footer>
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About – Automa8</title>
+    <title>Contact – Automa8</title>
     <meta name="description" content="Mindful wealth tracking. Built for privacy, not for profit." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,13 +13,67 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css" />
+    <style>
+        .home-footer {
+            background: #f3f4f6;
+            border-top: 1px solid #e5e7eb;
+            padding: 2.2rem 1.5rem 1rem;
+        }
+
+        .home-footer-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        .home-footer .logo-text {
+            color: #111827;
+        }
+
+        .home-footer-copy-text {
+            font-size: 0.75rem;
+            color: #9ca3af;
+            line-height: 1.6;
+            max-width: 300px;
+            margin-top: 0.5rem;
+        }
+
+        .home-footer-col h4 {
+            font-size: 0.78rem;
+            color: #111827;
+            margin-bottom: 0.5rem;
+        }
+
+        .home-footer-col a {
+            display: block;
+            font-size: 0.8rem;
+            color: #6b7280;
+            margin-bottom: 0.35rem;
+        }
+
+        .home-footer-bottom {
+            margin-top: 1.5rem;
+            padding-top: 0.8rem;
+            border-top: 1px solid #e5e7eb;
+            font-size: 0.72rem;
+            color: #9ca3af;
+        }
+
+        @media (max-width: 720px) {
+            .home-footer-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
     <header class="site-header" id="site-header">
         <div class="header-inner">
-            <a href="index.html" class="logo-link">
+            <a href="home.html" class="logo-link">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
                     <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#10b77f" />
                     <path d="M2 17L12 22L22 17" stroke="#10b77f" stroke-width="2" stroke-linecap="round"
@@ -30,11 +84,13 @@
                 <span class="logo-text">Automa8</span>
             </a>
             <nav class="main-nav" id="main-nav">
-                <a href="features.html">Dashboard</a>
-                <a href="about.html" class="active">About</a>
+                <a href="home.html#product">Product</a>
+                <a href="home.html#pricing">Pricing</a>
+                <a href="features.html">Features</a>
+                <a href="contact.html" class="active">Contact</a>
             </nav>
             <div class="header-actions">
-                <button class="btn-primary" onclick="openWaitlist()">Get Started</button>
+                <button class="btn-primary" onclick="openWaitlist()">Join Waitlist</button>
                 <button class="hamburger" id="hamburger"
                     aria-label="Toggle menu"><span></span><span></span><span></span></button>
             </div>
@@ -123,10 +179,11 @@
 
     </main>
 
-    <!-- Footer: logo + copyright left only — no nav links -->
-    <footer class="about-footer">
-        <div class="about-footer-inner">
-            <a href="index.html" class="logo-link">
+    <footer class="home-footer">
+        <div class="container">
+            <div class="home-footer-grid">
+                <div>
+                    <a href="home.html" class="logo-link">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
                     <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#10b77f" />
                     <path d="M2 17L12 22L22 17" stroke="#10b77f" stroke-width="2" stroke-linecap="round"
@@ -134,9 +191,20 @@
                     <path d="M2 12L12 17L22 12" stroke="#10b77f" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
                 </svg>
-                <span class="about-footer-logo-text">Automa8</span>
-            </a>
-            <p class="about-footer-copy">© 2024 Automa8. Privacy first.</p>
+                    <span class="logo-text">Automa8</span>
+                </a>
+                    <p class="home-footer-copy-text">The world's most advanced wealth tracking platform for modern investors. Built for privacy, speed, and precision.</p>
+                </div>
+                <div class="home-footer-col">
+                    <h4>Product</h4>
+                    <a href="features.html">Features</a>
+                </div>
+                <div class="home-footer-col">
+                    <h4>Company</h4>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+            <div class="home-footer-bottom">© 2024 WealthStack Inc. All rights reserved.</div>
         </div>
     </footer>
 
