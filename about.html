@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About – Automa8</title>
+    <meta name="description"
+        content="Learn about Automa8's philosophy: mindful wealth tracking built for privacy, not profit." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+
+    <header class="site-header" id="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo-link">
+                <span class="material-symbols-outlined logo-icon"
+                    style="font-variation-settings:'FILL' 1">account_balance_wallet</span>
+                <span class="logo-text">Automa8</span>
+            </a>
+            <nav class="main-nav" id="main-nav">
+                <a href="features.html">Features</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="about.html" class="active">About</a>
+                <a href="blog.html">Blog</a>
+            </nav>
+            <div class="header-actions">
+                <button class="btn-primary" onclick="openWaitlist()">Get Started</button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Philosophy hero - matches design reference -->
+        <section class="section">
+            <div class="container">
+                <div class="two-col">
+                    <div class="col-text">
+                        <span class="badge">Our Philosophy</span>
+                        <h1>Mindful wealth<br />tracking.</h1>
+                        <p class="accent-text">Built for privacy, not for profit.</p>
+                        <p>Automa8 was born out of a simple need: a way to track wealth without the noise. We believe
+                            your financial data belongs to you, not a corporate database.</p>
+                        <p>No intrusive bank connections, no marketing jargon, and zero data selling. Just a clean,
+                            quiet space to see your progress mindfully and intentionally.</p>
+                    </div>
+                    <div class="col-image">
+                        <img src="img/forest.jpg" alt="Forest – mindful and intentional" class="round-image"
+                            onerror="this.style.background='linear-gradient(135deg,#10b77f22,#10b77f55)';this.style.borderRadius='16px';this.style.minHeight='340px';this.style.width='100%';this.style.display='block'" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Principles -->
+        <section class="section" style="background:var(--surface-alt)">
+            <div class="container">
+                <div class="section-header">
+                    <span class="badge">What We Believe</span>
+                    <h2>Our core principles</h2>
+                </div>
+                <div class="principles-grid">
+                    <div class="principle-card">
+                        <span class="material-symbols-outlined principle-icon"
+                            style="font-variation-settings:'FILL' 1">lock</span>
+                        <h3>Privacy by design</h3>
+                        <p>We never sell your data. No ads, no analytics leaks, no third-party integrations that
+                            compromise your information.</p>
+                    </div>
+                    <div class="principle-card">
+                        <span class="material-symbols-outlined principle-icon"
+                            style="font-variation-settings:'FILL' 1">spa</span>
+                        <h3>Calm & focused UI</h3>
+                        <p>Financial tools should calm anxiety, not create it. Every design decision is made with
+                            clarity and simplicity in mind.</p>
+                    </div>
+                    <div class="principle-card">
+                        <span class="material-symbols-outlined principle-icon"
+                            style="font-variation-settings:'FILL' 1">people</span>
+                        <h3>Community-driven</h3>
+                        <p>Built in the open. Our roadmap is shaped by real users with real needs—not venture
+                            capitalists chasing growth.</p>
+                    </div>
+                    <div class="principle-card">
+                        <span class="material-symbols-outlined principle-icon"
+                            style="font-variation-settings:'FILL' 1">devices</span>
+                        <h3>Works everywhere</h3>
+                        <p>Designed to work on any device, any screen, any browser—so you can track your progress
+                            wherever life takes you.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact section - from design reference -->
+        <section class="section contact-section">
+            <div class="container">
+                <div class="two-col contact-two-col">
+                    <div class="col-text">
+                        <h2>Get in touch</h2>
+                        <p>Have questions about our privacy policy or want to suggest a feature? We're human, and we'd
+                            love to hear from you.</p>
+                        <div class="contact-info">
+                            <div class="contact-row">
+                                <span class="material-symbols-outlined" style="color:#10b77f">mail</span>
+                                <a href="mailto:hello@automa8.io">hello@automa8.io</a>
+                            </div>
+                            <div class="contact-row">
+                                <span class="material-symbols-outlined" style="color:#10b77f">location_on</span>
+                                <span>Remote First, Earth</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form-wrap">
+                        <form class="contact-form" onsubmit="handleContact(event)">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" placeholder="Your name" required />
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" placeholder="you@example.com" required />
+                            </div>
+                            <div class="form-group">
+                                <label>Message</label>
+                                <textarea placeholder="How can we help?" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary btn-full btn-send">Send Message →</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <a href="index.html" class="logo-link logo-link-footer">
+                    <span class="material-symbols-outlined logo-icon"
+                        style="font-variation-settings:'FILL' 1">account_balance_wallet</span>
+                    <span class="logo-text">Automa8</span>
+                </a>
+                <p>© 2026 Automa8. Privacy first.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <a href="features.html">Features</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="blog.html">Blog</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Community</h4>
+                    <a href="#">Twitter / X</a>
+                    <a href="#">Discord</a>
+                    <a href="#">GitHub</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="#">Terms</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Twitter / X</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal-overlay" id="modal-overlay" onclick="closeWaitlist(event)">
+        <div class="modal-card" id="modal-card">
+            <button class="modal-close" onclick="closeWaitlist()">×</button>
+            <div class="modal-logo">
+                <span class="material-symbols-outlined"
+                    style="font-variation-settings:'FILL' 1;color:#10b77f;font-size:2rem">account_balance_wallet</span>
+            </div>
+            <h2 class="modal-title">Join the Waitlist</h2>
+            <p class="modal-sub">Be the first to experience the future of workflow automation.<br />Early access slots
+                are limited.</p>
+            <form class="modal-form" id="waitlist-form" onsubmit="handleWaitlist(event)">
+                <div class="form-group">
+                    <label>FULL NAME</label>
+                    <div class="input-wrap">
+                        <span class="material-symbols-outlined input-icon">person</span>
+                        <input type="text" placeholder="John Doe" required id="wl-name" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>EMAIL ADDRESS</label>
+                    <div class="input-wrap">
+                        <span class="material-symbols-outlined input-icon">mail</span>
+                        <input type="email" placeholder="john@example.com" required id="wl-email" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>PREFERRED PLAN</label>
+                    <div class="select-wrap">
+                        <span class="material-symbols-outlined input-icon">star</span>
+                        <select id="wl-plan">
+                            <option value="" disabled selected>Select your plan</option>
+                            <option>Free</option>
+                            <option>Plus</option>
+                            <option>Explorer</option>
+                        </select>
+                        <span class="material-symbols-outlined select-arrow">expand_more</span>
+                    </div>
+                </div>
+                <button type="submit" class="btn-primary btn-full">Join Waitlist →</button>
+                <p class="modal-note">No credit card required for waitlist</p>
+            </form>
+            <div class="modal-success" id="modal-success" style="display:none">
+                <span class="material-symbols-outlined success-icon"
+                    style="font-variation-settings:'FILL' 1">check_circle</span>
+                <h3>You're on the list!</h3>
+                <p>We'll reach out when your spot is ready.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        function handleContact(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('.btn-send');
+            btn.textContent = '✓ Message Sent!';
+            btn.disabled = true;
+            btn.style.background = '#0d9668';
+            setTimeout(() => { e.target.reset(); btn.textContent = 'Send Message →'; btn.disabled = false; btn.style.background = ''; }, 3000);
+        }
+    </script>
+</body>
+
+</html>

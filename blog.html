@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog – Automa8</title>
+    <meta name="description"
+        content="Insights on mindful wealth tracking, financial automation, and building a calmer financial life." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+
+    <header class="site-header" id="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo-link">
+                <span class="material-symbols-outlined logo-icon"
+                    style="font-variation-settings:'FILL' 1">account_balance_wallet</span>
+                <span class="logo-text">Automa8</span>
+            </a>
+            <nav class="main-nav" id="main-nav">
+                <a href="features.html">Features</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="about.html">About</a>
+                <a href="blog.html" class="active">Blog</a>
+            </nav>
+            <div class="header-actions">
+                <button class="btn-primary" onclick="openWaitlist()">Get Started</button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="badge">Blog</span>
+                    <h1>Ideas &amp; Insights</h1>
+                    <p>Thoughts on mindful finance, automation, and building a calmer life.</p>
+                </div>
+
+                <div class="blog-grid">
+                    <article class="blog-card featured-post">
+                        <div class="blog-card-image"
+                            style="background:linear-gradient(135deg,#10b77f33,#10b77f99);min-height:200px;border-radius:12px;display:flex;align-items:center;justify-content:center">
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings:'FILL' 1;font-size:4rem;color:#10b77f">auto_graph</span>
+                        </div>
+                        <div class="blog-card-body">
+                            <span class="blog-tag">Finance</span>
+                            <h2><a href="#">Why Most Budgeting Apps Fail at Privacy</a></h2>
+                            <p>Popular budgeting tools rely on your data to stay free. Here's what that really means—and
+                                what to do instead.</p>
+                            <div class="blog-meta">
+                                <span>Jan 15, 2026</span>
+                                <span>·</span>
+                                <span>5 min read</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card">
+                        <div class="blog-card-body">
+                            <span class="blog-tag">Automation</span>
+                            <h2><a href="#">5 Workflows That Changed How I Track Investments</a></h2>
+                            <p>Simple drag-and-drop flows that save hours every month and keep your portfolio data
+                                organized.</p>
+                            <div class="blog-meta">
+                                <span>Dec 28, 2025</span>
+                                <span>·</span>
+                                <span>4 min read</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card">
+                        <div class="blog-card-body">
+                            <span class="blog-tag">Mindfulness</span>
+                            <h2><a href="#">The Psychology of Wealth Anxiety</a></h2>
+                            <p>How cluttered financial dashboards increase stress—and how calm design can actually
+                                improve your decisions.</p>
+                            <div class="blog-meta">
+                                <span>Dec 10, 2025</span>
+                                <span>·</span>
+                                <span>6 min read</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card">
+                        <div class="blog-card-body">
+                            <span class="blog-tag">Product</span>
+                            <h2><a href="#">Introducing Automa8 1.0: Built Different</a></h2>
+                            <p>After 8 months of building quietly, we're ready to share what we've made—and why it's
+                                unlike anything else out there.</p>
+                            <div class="blog-meta">
+                                <span>Nov 20, 2025</span>
+                                <span>·</span>
+                                <span>3 min read</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card">
+                        <div class="blog-card-body">
+                            <span class="blog-tag">Guide</span>
+                            <h2><a href="#">Net Worth Tracking for Beginners</a></h2>
+                            <p>A plain-language guide to understanding your financial snapshot and how to start tracking
+                                it without overwhelm.</p>
+                            <div class="blog-meta">
+                                <span>Nov 5, 2025</span>
+                                <span>·</span>
+                                <span>7 min read</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card">
+                        <div class="blog-card-body">
+                            <span class="blog-tag">API</span>
+                            <h2><a href="#">Building Your First Automa8 Integration</a></h2>
+                            <p>A step-by-step developer walkthrough for connecting Automa8 to your existing tools via
+                                REST API.</p>
+                            <div class="blog-meta">
+                                <span>Oct 21, 2025</span>
+                                <span>·</span>
+                                <span>8 min read</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-banner">
+            <div class="container">
+                <h2>Stay in the loop</h2>
+                <p>Subscribe to get new posts straight to your inbox. No spam, ever.</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="you@example.com" class="newsletter-input" id="nl-email" />
+                    <button class="btn-primary" onclick="handleNewsletter()">Subscribe →</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <a href="index.html" class="logo-link logo-link-footer">
+                    <span class="material-symbols-outlined logo-icon"
+                        style="font-variation-settings:'FILL' 1">account_balance_wallet</span>
+                    <span class="logo-text">Automa8</span>
+                </a>
+                <p>© 2026 Automa8. Privacy first.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <a href="features.html">Features</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="blog.html">Blog</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Community</h4>
+                    <a href="#">Twitter / X</a>
+                    <a href="#">Discord</a>
+                    <a href="#">GitHub</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="#">Terms</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Twitter / X</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal-overlay" id="modal-overlay" onclick="closeWaitlist(event)">
+        <div class="modal-card" id="modal-card">
+            <button class="modal-close" onclick="closeWaitlist()">×</button>
+            <div class="modal-logo">
+                <span class="material-symbols-outlined"
+                    style="font-variation-settings:'FILL' 1;color:#10b77f;font-size:2rem">account_balance_wallet</span>
+            </div>
+            <h2 class="modal-title">Join the Waitlist</h2>
+            <p class="modal-sub">Be the first to experience the future of workflow automation.<br />Early access slots
+                are limited.</p>
+            <form class="modal-form" id="waitlist-form" onsubmit="handleWaitlist(event)">
+                <div class="form-group">
+                    <label>FULL NAME</label>
+                    <div class="input-wrap">
+                        <span class="material-symbols-outlined input-icon">person</span>
+                        <input type="text" placeholder="John Doe" required id="wl-name" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>EMAIL ADDRESS</label>
+                    <div class="input-wrap">
+                        <span class="material-symbols-outlined input-icon">mail</span>
+                        <input type="email" placeholder="john@example.com" required id="wl-email" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>PREFERRED PLAN</label>
+                    <div class="select-wrap">
+                        <span class="material-symbols-outlined input-icon">star</span>
+                        <select id="wl-plan">
+                            <option value="" disabled selected>Select your plan</option>
+                            <option>Free</option>
+                            <option>Plus</option>
+                            <option>Explorer</option>
+                        </select>
+                        <span class="material-symbols-outlined select-arrow">expand_more</span>
+                    </div>
+                </div>
+                <button type="submit" class="btn-primary btn-full">Join Waitlist →</button>
+                <p class="modal-note">No credit card required for waitlist</p>
+            </form>
+            <div class="modal-success" id="modal-success" style="display:none">
+                <span class="material-symbols-outlined success-icon"
+                    style="font-variation-settings:'FILL' 1">check_circle</span>
+                <h3>You're on the list!</h3>
+                <p>We'll reach out when your spot is ready.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        function handleNewsletter() {
+            const inp = document.getElementById('nl-email');
+            if (!inp.value || !inp.value.includes('@')) { inp.focus(); return; }
+            inp.value = '';
+            inp.placeholder = '✓ You\'re subscribed!';
+            setTimeout(() => { inp.placeholder = 'you@example.com'; }, 3000);
+        }
+    </script>
+</body>
+
+</html>
