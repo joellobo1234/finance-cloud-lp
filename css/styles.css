@@ -398,6 +398,10 @@ p {
     background: #f3f4f6;
 }
 
+#product {
+    padding-bottom: 2rem;
+}
+
 .hero-title {
     font-size: clamp(2.25rem, 5vw, 3.75rem);
     font-weight: 900;
@@ -505,6 +509,10 @@ p {
 }
 
 /* ══════════════  ALTERNATING FEATURE ROWS  ══════════════ */
+.features-alternating {
+    padding-top: 2rem;
+}
+
 .features-alternating .feature-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -512,6 +520,10 @@ p {
     align-items: center;
     padding: 4rem 0;
     border-bottom: 1px solid #e5e7eb;
+}
+
+.features-alternating .feature-row:first-child {
+    padding-top: 3rem;
 }
 
 .features-alternating .feature-row:last-child {
