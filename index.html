@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Automa8 – Mindful Wealth Tracking</title>
+    <meta name="description" content="Automa8 gives you the clarity you need without compromising your privacy." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0;
+            padding: 0.35rem 0.85rem;
+            border-radius: 99px;
+            background: rgba(16, 183, 127, 0.1);
+            color: #10b77f;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            margin-bottom: 1.5rem;
+        }
+
+        .badge-dot-pulse {
+            position: relative;
+            display: inline-flex;
+            width: 8px;
+            height: 8px;
+            margin-right: 6px;
+            flex-shrink: 0;
+        }
+
+        .badge-dot-pulse::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            background: #10b77f;
+            animation: pulse-ring 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            opacity: 0.75;
+        }
+
+        .badge-dot-pulse::after {
+            content: '';
+            position: absolute;
+            inset: 1px;
+            border-radius: 50%;
+            background: #10b77f;
+        }
+
+        @keyframes pulse-ring {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.75;
+            }
+
+            50% {
+                transform: scale(1.8);
+                opacity: 0;
+            }
+        }
+
+        .mock-table-ui {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.875rem;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+            width: 100%;
+        }
+
+        .mock-table-ui-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.65rem 1rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .mock-table-ui-title {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.65rem;
+            color: #6b7280;
+            font-weight: 600;
+        }
+
+        .mock-table-traffic {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+        }
+
+        .mock-table-traffic.red {
+            background: #ff5f56;
+        }
+
+        .mock-table-traffic.yellow {
+            background: #ffbd2e;
+        }
+
+        .mock-table-traffic.green {
+            background: #27c93f;
+        }
+
+        .mock-table-head {
+            display: grid;
+            grid-template-columns: 2fr 1.5fr 0.8fr 1.2fr;
+            padding: 0.4rem 1rem;
+            border-bottom: 1px solid #f5f5f5;
+        }
+
+        .mock-table-head span {
+            font-size: 0.55rem;
+            font-weight: 600;
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .mock-table-row-data {
+            display: grid;
+            grid-template-columns: 2fr 1.5fr 0.8fr 1.2fr;
+            padding: 0.45rem 1rem;
+            border-bottom: 1px solid #fafafa;
+            align-items: center;
+        }
+
+        .mock-table-row-data span {
+            font-size: 0.6rem;
+            color: #374151;
+        }
+
+        .mock-table-row-data span.muted {
+            color: #9ca3af;
+        }
+
+        .mock-table-add-btn {
+            margin: 0.6rem 1rem 0.8rem;
+            padding: 0.3rem 0.75rem;
+            background: #f0fdf8;
+            border: 1px dashed #10b77f;
+            border-radius: 0.4rem;
+            font-size: 0.6rem;
+            color: #10b77f;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .mock-boards-ui {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.875rem;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+            width: 100%;
+        }
+
+        .mock-boards-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.65rem 1rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .mock-boards-title-row {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.65rem;
+            color: #6b7280;
+            font-weight: 600;
+        }
+
+        .mock-live-badge {
+            font-size: 0.5rem;
+            font-weight: 700;
+            background: #10b77f;
+            color: #fff;
+            padding: 0.1rem 0.35rem;
+            border-radius: 3px;
+            letter-spacing: 0.05em;
+        }
+
+        .mock-boards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            padding: 0.85rem 1rem;
+        }
+
+        .mock-board-card {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+        }
+
+        .mock-board-name {
+            font-size: 0.6rem;
+            color: #9ca3af;
+            font-weight: 500;
+            margin-bottom: 0.2rem;
+        }
+
+        .mock-board-amt {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 0.4rem;
+        }
+
+        .mock-progress-track {
+            height: 5px;
+            background: #e5e7eb;
+            border-radius: 99px;
+            overflow: hidden;
+            margin-bottom: 0.3rem;
+        }
+
+        .mock-progress-fill {
+            height: 100%;
+            background: #10b77f;
+            border-radius: 99px;
+        }
+
+        .mock-board-target {
+            font-size: 0.5rem;
+            color: #9ca3af;
+        }
+
+        .mock-boards-events {
+            padding: 0 1rem 0.85rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .mock-event-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .mock-event-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #10b77f;
+            display: inline-block;
+            margin-right: 0.4rem;
+            flex-shrink: 0;
+        }
+
+        .mock-event-label {
+            font-size: 0.55rem;
+            color: #6b7280;
+            display: flex;
+            align-items: center;
+        }
+
+        .mock-event-time {
+            font-size: 0.5rem;
+            color: #9ca3af;
+        }
+
+        .home-footer {
+            background: #f3f4f6;
+            border-top: 1px solid #e5e7eb;
+            padding: 2.2rem 1.5rem 1rem;
+        }
+
+        .home-footer-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        .home-footer .logo-text {
+            color: #111827;
+        }
+
+        .home-footer-copy-text {
+            font-size: 0.75rem;
+            color: #9ca3af;
+            line-height: 1.6;
+            max-width: 300px;
+            margin-top: 0.5rem;
+        }
+
+        .home-footer-col h4 {
+            font-size: 0.78rem;
+            color: #111827;
+            margin-bottom: 0.5rem;
+        }
+
+        .home-footer-col a {
+            display: block;
+            font-size: 0.8rem;
+            color: #6b7280;
+            margin-bottom: 0.35rem;
+        }
+
+        .home-footer-bottom {
+            margin-top: 1.5rem;
+            padding-top: 0.8rem;
+            border-top: 1px solid #e5e7eb;
+            font-size: 0.72rem;
+            color: #9ca3af;
+        }
+
+        @media (max-width: 720px) {
+            .home-footer-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header" id="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo-link">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#10b77f" />
+                    <path d="M2 17L12 22L22 17" stroke="#10b77f" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M2 12L12 17L22 12" stroke="#10b77f" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                <span class="logo-text">Automa8</span>
+            </a>
+            <nav class="main-nav" id="main-nav">
+                <a href="index.html#product">Product</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="features.html">Features</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <button class="btn-primary" onclick="openWaitlist()">Join Waitlist</button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero-section text-center">
+            <div class="container container-sm">
+                <div class="hero-badge"><span class="badge-dot-pulse"></span>NOW OPEN FOR EARLY ACCESS</div>
+                <h1 class="hero-title">Take back control of your<br /><span class="text-primary-color">Financial
+                        Journey</span></h1>
+                <p class="hero-subtitle">A simple, private way to track and grow your wealth. No bank logins, no API
+                    tokens, just you and your goals. Your money stays where it is — we just help you see it clearly.</p>
+
+                <form class="hero-email-form" onsubmit="handleHeroSubmit(event)">
+                    <input type="email" placeholder="Enter your work email" required />
+                    <button type="submit" class="btn-primary">Join Waitlist</button>
+                </form>
+                <p class="hero-micro">No credit card required. 1,200+ investors already on the list.</p>
+            </div>
+        </section>
+
+        <!-- 3 CARDS SECTION -->
+        <section class="section pt-0" id="product">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Stop juggling spreadsheets. Automa8 brings everything under one roof.</h2>
+                    <p>Spreadsheets are messy, and automated apps are invasive. Automa8 gives you the clarity you need
+                        without compromising your privacy.</p>
+                </div>
+
+                <div class="grid-3">
+                    <div class="card-soft">
+                        <div class="card-icon-small"><span class="material-symbols-outlined">visibility</span></div>
+                        <h3>Total Visibility</h3>
+                        <p>Get a bird's-eye view of your assets and liabilities in one place. Manual entry means you see
+                            exactly what you want to see, without the clutter of automatic syncs.</p>
+                    </div>
+                    <div class="card-soft">
+                        <div class="card-icon-small"><span class="material-symbols-outlined">track_changes</span></div>
+                        <h3>Intentional Progress</h3>
+                        <p>Set meaningful goals and see your progress track over time. Visualizing your milestones keeps
+                            you mindful and connected to your financial goals.</p>
+                    </div>
+                    <div class="card-soft">
+                        <div class="card-icon-small"><span class="material-symbols-outlined">shield_lock</span></div>
+                        <h3>Absolute Privacy</h3>
+                        <p>No bank logins. No API tokens. No data selling. Since you enter the data, your financial life
+                            stays completely disconnected and 100% private.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ALTERNATING FEATURES -->
+        <section class="section features-alternating">
+            <div class="container">
+
+                <!-- Feature 1 -->
+                <div class="feature-row">
+                    <div class="feature-text">
+                        <span class="badge badge-light-green">REAL-TIME INSIGHTS</span>
+                        <h2>Everything you need to reach your goals</h2>
+                        <p>Get a bird's-eye view of your entire financial life. No more switching between five different
+                            bank apps. Just one clean space to visualize where you are and where you're going.</p>
+                        <ul class="feature-list">
+                            <li><span class="material-symbols-outlined icon-check">check_circle</span> Automatic account
+                                aggregation</li>
+                            <li><span class="material-symbols-outlined icon-check">check_circle</span> Portfolio
+                                performance benchmarking</li>
+                        </ul>
+                    </div>
+                    <div class="feature-image">
+                        <div class="mock-table-ui">
+                            <div class="mock-table-ui-header">
+                                <div class="mock-table-ui-title">
+                                    <span class="mock-table-traffic red"></span>
+                                    <span class="mock-table-traffic yellow"></span>
+                                    <span class="mock-table-traffic green"></span>
+                                    &nbsp;Fixed Deposits
+                                </div>
+                            </div>
+                            <div class="mock-table-head">
+                                <span>BANK</span>
+                                <span>AMOUNT</span>
+                                <span>RATE</span>
+                                <span>MATURITY</span>
+                            </div>
+                            <div class="mock-table-row-data">
+                                <span>HDFC</span>
+                                <span>₹50,000</span>
+                                <span>7.1%</span>
+                                <span class="muted">Jun 2026</span>
+                            </div>
+                            <div class="mock-table-row-data">
+                                <span>SBI</span>
+                                <span>₹25,000</span>
+                                <span>6.5%</span>
+                                <span class="muted">Aug 2026</span>
+                            </div>
+                            <div class="mock-table-row-data">
+                                <span>ICICI</span>
+                                <span>₹1,00,000</span>
+                                <span>7.4%</span>
+                                <span class="muted">Dec 2026</span>
+                            </div>
+                            <div class="mock-table-row-data">
+                                <span>Axis</span>
+                                <span>₹75,000</span>
+                                <span>7.0%</span>
+                                <span class="muted">Mar 2027</span>
+                            </div>
+                            <div class="mock-table-add-btn">+ Add Deposit</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-row reverse">
+                    <div class="feature-text">
+                        <span class="badge badge-light-green">FIXED INCOME</span>
+                        <h2>Simple tools for mindful tracking</h2>
+                        <p>Keep track of your fixed deposits across different banks manually. It only takes a minute,
+                            but the peace of mind of knowing exactly when your next maturity hits is priceless.</p>
+                        <ul class="feature-list">
+                            <li><span class="material-symbols-outlined icon-check">check_circle</span> Automated
+                                maturity alerts</li>
+                            <li><span class="material-symbols-outlined icon-check">check_circle</span> Tax implication
+                                summaries</li>
+                        </ul>
+                    </div>
+                    <div class="feature-image">
+                        <div class="mock-table-ui">
+                            <div class="mock-table-ui-header">
+                                <div class="mock-table-ui-title">
+                                    <span class="mock-table-traffic red"></span>
+                                    <span class="mock-table-traffic yellow"></span>
+                                    <span class="mock-table-traffic green"></span>
+                                    &nbsp;Fixed Deposits
+                                </div>
+                            </div>
+                            <div class="mock-table-head">
+                                <span>BANK</span>
+                                <span>AMOUNT</span>
+                                <span>RATE</span>
+                                <span>MATURITY</span>
+                            </div>
+                            <div class="mock-table-row-data">
+                                <span>HDFC</span>
+                                <span>₹50,000</span>
+                                <span>7.1%</span>
+                                <span class="muted">Jun 2026</span>
+                            </div>
+                            <div class="mock-table-row-data">
+                                <span>SBI</span>
+                                <span>₹25,000</span>
+                                <span>6.5%</span>
+                                <span class="muted">Aug 2026</span>
+                            </div>
+                            <div class="mock-table-row-data">
+                                <span>ICICI</span>
+                                <span>₹1,00,000</span>
+                                <span>7.4%</span>
+                                <span class="muted">Dec 2026</span>
+                            </div>
+                            <div class="mock-table-row-data">
+                                <span>Axis</span>
+                                <span>₹75,000</span>
+                                <span>7.0%</span>
+                                <span class="muted">Mar 2027</span>
+                            </div>
+                            <div class="mock-table-add-btn">+ Add Deposit</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-row">
+                    <div class="feature-text">
+                        <span class="badge badge-light-green">ORGANIZATION</span>
+                        <h2>Organize what matters most</h2>
+                        <p>Whether it's your 'Dream Home' fund or 'Kid's Education,' create visual boards that help you
+                            stay motivated. It's about taking action on your dreams, not just looking at numbers.</p>
+                        <ul class="feature-list">
+                            <li><span class="material-symbols-outlined icon-check">check_circle</span> Goal-based
+                                tracking modules</li>
+                            <li><span class="material-symbols-outlined icon-check">check_circle</span> Secure document
+                                vault</li>
+                        </ul>
+                    </div>
+                    <div class="feature-image">
+                        <div class="mock-boards-ui">
+                            <div class="mock-boards-header">
+                                <div class="mock-boards-title-row">
+                                    <span class="mock-table-traffic red"></span>
+                                    <span class="mock-table-traffic yellow"></span>
+                                    <span class="mock-table-traffic green"></span>
+                                    &nbsp;Financial Boards
+                                </div>
+                                <span class="mock-live-badge">LIVE</span>
+                            </div>
+                            <div class="mock-boards-grid">
+                                <div class="mock-board-card">
+                                    <div class="mock-board-name">DREAM HOME</div>
+                                    <div class="mock-board-amt">₹8,50,000</div>
+                                    <div class="mock-progress-track">
+                                        <div class="mock-progress-fill" style="width:68%"></div>
+                                    </div>
+                                    <div class="mock-board-target">Target: ₹12,50,000</div>
+                                </div>
+                                <div class="mock-board-card">
+                                    <div class="mock-board-name">EMERGENCY FUND</div>
+                                    <div class="mock-board-amt">₹3,20,000</div>
+                                    <div class="mock-progress-track">
+                                        <div class="mock-progress-fill" style="width:80%"></div>
+                                    </div>
+                                    <div class="mock-board-target">Target: ₹4,00,000</div>
+                                </div>
+                            </div>
+                            <div class="mock-boards-events">
+                                <div class="mock-event-row">
+                                    <span class="mock-event-label"><span class="mock-event-dot"></span>Salary added to
+                                        savings</span>
+                                    <span class="mock-event-time">2h ago</span>
+                                </div>
+                                <div class="mock-event-row">
+                                    <span class="mock-event-label"><span class="mock-event-dot"></span>FD matured at
+                                        HDFC</span>
+                                    <span class="mock-event-time">1d ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4 CARDS - PRIVACY -->
+        <section class="section pt-0">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>True privacy by design. You're in control.</h2>
+                    <p>We don't ask for mailbox access or bank passwords. We believe your data belongs to you.</p>
+                </div>
+
+                <div class="grid-4">
+                    <div class="card-outline">
+                        <div class="card-icon-line"><span class="material-symbols-outlined">public_off</span></div>
+                        <h4>Zero Bank Logins</h4>
+                        <p>We don't ask for your passwords or sync with your bank. You enter your data, and we keep it
+                            safe.</p>
+                    </div>
+                    <div class="card-outline">
+                        <div class="card-icon-line"><span class="material-symbols-outlined">self_improvement</span>
+                        </div>
+                        <h4>Mindful Tracking</h4>
+                        <p>Manual entry isn't a chore—it's a habit. Being closer to your numbers helps you make better
+                            decisions.</p>
+                    </div>
+                    <div class="card-outline">
+                        <div class="card-icon-line"><span class="material-symbols-outlined">insert_chart</span></div>
+                        <h4>Visualizing Targets</h4>
+                        <p>Instead of automated budgets, we give you the tools to set clear targets and watch yourself
+                            reach them.</p>
+                    </div>
+                    <div class="card-outline">
+                        <div class="card-icon-line"><span class="material-symbols-outlined">account_balance</span></div>
+                        <h4>Legacy Planning</h4>
+                        <p>We don't ask for tedious access or bank passwords. We believe your data belongs to you.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRICING -->
+        <section class="section" id="pricing">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Transparent Pricing</h2>
+                    <p>Fair prices for tools that help you grow. No hidden catches.</p>
+                </div>
+
+                <div class="pricing-deck">
+                    <div class="pr-card">
+                        <h4>Basic</h4>
+                        <p class="pr-desc">Fair prices for tools that help you grow. No hidden catches.</p>
+                        <div class="pr-price">₹99<span>/mo</span></div>
+                        <ul class="pr-features">
+                            <li><span class="material-symbols-outlined icon-check-small">check</span> Up to 10 Linked
+                                Accounts</li>
+                            <li><span class="material-symbols-outlined icon-check-small">check</span> Daily Net Worth
+                                Sync</li>
+                            <li><span class="material-symbols-outlined icon-check-small">check</span> Essential
+                                Analytics</li>
+                        </ul>
+                        <button class="btn-outline btn-full" onclick="openWaitlist()">Join Waitlist</button>
+                    </div>
+
+                    <div class="pr-card popular">
+                        <div class="badge-popular">Most Popular</div>
+                        <h4>Full Access</h4>
+                        <p class="pr-desc">Fair prices for tools that help you grow. No hidden catches.</p>
+                        <div class="pr-price">₹199<span>/mo</span></div>
+                        <ul class="pr-features">
+                            <li><span class="material-symbols-outlined icon-check-small">check</span> Unlimited API
+                                Connections</li>
+                            <li><span class="material-symbols-outlined icon-check-small">check</span> Real-time Price
+                                Alerts</li>
+                            <li><span class="material-symbols-outlined icon-check-small">check</span> Tax Loss
+                                Harvesting Tools</li>
+                            <li><span class="material-symbols-outlined icon-check-small">check</span> Priority 24/7
+                                Support</li>
+                        </ul>
+                        <button class="btn-primary btn-full" onclick="openWaitlist()">Join Waitlist</button>
+                    </div>
+
+                    <div class="pr-card">
+                        <h4>Custom / White Labeled</h4>
+                        <p class="pr-desc">Built for financial advisors.</p>
+                        <div class="pr-price-text">Custom Pricing</div>
+                        <ul class="pr-features">
+                            <li><span class="material-symbols-outlined icon-check-small">check</span> White labeled
+                                deployment</li>
+                            <li><span class="material-symbols-outlined icon-check-small">check</span> Custom branding
+                            </li>
+                            <li><span class="material-symbols-outlined icon-check-small">check</span> Personalized
+                                styles
+                            </li>
+                        </ul>
+                        <button class="btn-outline btn-full" onclick="openWaitlist()">Contact Us</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA BLOCK -->
+        <section class="section pt-0">
+            <div class="container">
+                <div class="cta-box text-center">
+                    <h2>Join 1,200+ mindful savers today</h2>
+                    <p>Start your journey toward financial clarity and peace of mind with a<br />community that values
+                        privacy as much as you do.</p>
+                    <button class="btn-primary-invert" onclick="openWaitlist()">Join Waitlist</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="home-footer">
+        <div class="container">
+            <div class="home-footer-grid">
+                <div>
+                    <a href="index.html" class="logo-link">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#10b77f" />
+                            <path d="M2 17L12 22L22 17" stroke="#10b77f" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M2 12L12 17L22 12" stroke="#10b77f" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span class="logo-text">Automa8</span>
+                    </a>
+                    <p class="home-footer-copy-text">The world's most advanced wealth tracking platform for modern
+                        investors. Built for privacy, speed, and precision.</p>
+                </div>
+                <div class="home-footer-col">
+                    <h4>Product</h4>
+                    <a href="features.html">Features</a>
+                </div>
+                <div class="home-footer-col">
+                    <h4>Company</h4>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+            <div class="home-footer-bottom">© 2024 WealthStack Inc. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modal-overlay" onclick="closeWaitlist(event)">
+        <div class="modal-card" id="modal-card">
+            <button class="modal-close" onclick="closeWaitlist()">×</button>
+            <div class="modal-icon-top">
+                <span class="material-symbols-outlined">auto_awesome</span>
+            </div>
+            <h2 class="modal-title">Join the Waitlist</h2>
+            <p class="modal-sub">Be the first to experience the future of<br />workflow automation.</p>
+
+            <form class="modal-form" id="waitlist-form" onsubmit="handleWaitlist(event)">
+                <div class="form-group">
+                    <label>FULL NAME</label>
+                    <div class="input-wrap">
+                        <span class="material-symbols-outlined input-icon">person</span>
+                        <input type="text" placeholder="Jon Doe" required id="wl-name" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>EMAIL ADDRESS</label>
+                    <div class="input-wrap">
+                        <span class="material-symbols-outlined input-icon">mail</span>
+                        <input type="email" placeholder="john@example.com" required id="wl-email" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>PREFERRED PLAN</label>
+                    <div class="select-wrap">
+                        <span class="material-symbols-outlined input-icon">layers</span>
+                        <select id="wl-plan">
+                            <option>Select your plan</option>
+                            <option>Basic</option>
+                            <option>Full Access</option>
+                        </select>
+                        <span class="material-symbols-outlined select-arrow">expand_more</span>
+                    </div>
+                </div>
+                <button type="submit" class="btn-primary btn-full mt-2">Join Waitlist <span
+                        class="material-symbols-outlined style-small">arrow_forward</span></button>
+                <p class="modal-note">No credit card required for waitlist</p>
+            </form>
+
+            <div class="modal-success" id="modal-success" style="display:none">
+                <span class="material-symbols-outlined success-icon">check_circle</span>
+                <h3>You're on the list!</h3>
+                <p>We'll reach out when your spot is ready.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        function handleHeroSubmit(e) {
+            e.preventDefault();
+            openWaitlist();
+        }
+    </script>
+</body>
+
+</html>

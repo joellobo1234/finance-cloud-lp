@@ -11,7 +11,7 @@ Static multi-page marketing website for Automa8, built with plain HTML/CSS/JS an
 - Shared behavior (header interactions, modal, reveal effects) lives in `js/main.js`.
 
 ### Pages
-- `home.html`: Landing page (hero, feature highlights, privacy, pricing, CTA).
+- `index.html`: Landing page (hero, feature highlights, privacy, pricing, CTA).
 - `features.html`: Product feature deep-dive page.
 - `contact.html`: Philosophy + contact form page.
 - `blog.html`: Blog listing page.
@@ -40,7 +40,7 @@ Static multi-page marketing website for Automa8, built with plain HTML/CSS/JS an
 
 ```txt
 finance-cloud-lp/
-├── home.html
+├── index.html
 ├── features.html
 ├── contact.html
 ├── blog.html
@@ -60,7 +60,7 @@ finance-cloud-lp/
 ### Option 1: Python
 ```bash
 python3 -m http.server 8181
-# open http://localhost:8181/home.html
+# open http://localhost:8181/index.html
 ```
 
 ### Option 2: Node
@@ -77,10 +77,10 @@ npx serve .
 
 `nginx.conf` defaults to:
 - Root: `/var/www/automa8`
-- Index: `home.html`
+- Index: `index.html`
 - Cache headers for static assets
 - No-cache headers for HTML
-- 404 fallback to `home.html`
+- 404 fallback to `index.html`
 
 ## Cleanup Performed
 
@@ -90,4 +90,4 @@ Removed unused file:
 ## Notes
 
 - Keep nav order consistent across pages: `Product`, `Pricing`, `Features`, `Contact`.
-- Homepage route in this project is `home.html`.
+- Homepage route in this project is `index.html`.
