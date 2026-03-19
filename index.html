@@ -745,26 +745,26 @@
             <h2 class="modal-title">Join the Waitlist</h2>
             <p class="modal-sub">Be the first to experience the future of<br />workflow automation.</p>
 
-            <form class="modal-form" id="waitlist-form" onsubmit="handleWaitlist(event)">
+            <form class="modal-form" id="waitlist-form" onsubmit="handleWaitlist(event)" action="https://formsubmit.co/joellobo2007@gmail.com" method="POST">
                 <div class="form-group">
                     <label>FULL NAME</label>
                     <div class="input-wrap">
                         <span class="material-symbols-outlined input-icon">person</span>
-                        <input type="text" placeholder="Jon Doe" required id="wl-name" />
+                        <input type="text" name="name" placeholder="Jon Doe" required id="wl-name" />
                     </div>
                 </div>
                 <div class="form-group">
                     <label>EMAIL ADDRESS</label>
                     <div class="input-wrap">
                         <span class="material-symbols-outlined input-icon">mail</span>
-                        <input type="email" placeholder="john@example.com" required id="wl-email" />
+                        <input type="email" name="email" placeholder="john@example.com" required id="wl-email" />
                     </div>
                 </div>
                 <div class="form-group">
                     <label>PREFERRED PLAN</label>
                     <div class="select-wrap">
                         <span class="material-symbols-outlined input-icon">layers</span>
-                        <select id="wl-plan">
+                        <select id="wl-plan" name="plan">
                             <option>Select your plan</option>
                             <option>Basic</option>
                             <option>Full Access</option>
@@ -774,6 +774,7 @@
                 </div>
                 <button type="submit" class="btn-primary btn-full mt-2">Join Waitlist <span
                         class="material-symbols-outlined style-small">arrow_forward</span></button>
+                <input type="hidden" name="_subject" value="[Automa8 Financial] New Form Submission">
                 <p class="modal-note">No credit card required for waitlist</p>
             </form>
 

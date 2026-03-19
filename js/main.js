@@ -88,17 +88,144 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-function handleWaitlist(e) {
+async function handleNewsletter(e) {
   e.preventDefault();
-  const btn = e.target.querySelector('button[type="submit"]');
+  const form = e.target;
+  const inp = form.querySelector('input[type="email"]');
+  const btn = form.querySelector('button');
+  const origBtnText = btn.textContent;
+  
+  btn.textContent = '...';
+  btn.disabled = true;
+
+  try {
+    const response = await fetch("https://formsubmit.co/ajax/joellobo2007@gmail.com", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify({
+        email: inp.value,
+        _subject: `[Automa8 Financial] New newsletter subscription from ${inp.value}`,
+        _template: "table"
+      })
+    });
+
+    if (response.ok) {
+      inp.value = '';
+      inp.placeholder = "✓ You're subscribed!";
+      btn.textContent = '✓';
+      setTimeout(() => {
+        inp.placeholder = 'you@example.com';
+        btn.textContent = origBtnText;
+        btn.disabled = false;
+      }, 3000);
+    } else {
+      throw new Error();
+    }
+  } catch (e) {
+    btn.textContent = 'Error';
+    btn.disabled = false;
+    setTimeout(() => { btn.textContent = origBtnText; }, 3000);
+  }
+}
+
+async function handleWaitlist(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('button[type="submit"]');
+  const originalText = btn.innerHTML;
+  
   btn.textContent = 'Joining…';
   btn.disabled = true;
 
-  // Simulate async submission
-  setTimeout(() => {
-    const form = document.getElementById('waitlist-form');
-    const success = document.getElementById('modal-success');
-    if (form) form.style.display = 'none';
-    if (success) success.style.display = '';
-  }, 900);
+  const nameVal = document.getElementById('wl-name').value;
+  const emailVal = document.getElementById('wl-email').value;
+  const planVal = document.getElementById('wl-plan').value;
+
+  const formData = {
+    name: nameVal,
+    email: emailVal,
+    plan: planVal,
+    _subject: `[Automa8 Financial] ${nameVal} joined the waitlist`,
+    _template: "table"
+  };
+
+  try {
+    const response = await fetch("https://formsubmit.co/ajax/joellobo2007@gmail.com", {
+      method: "POST",
+      headers: { 
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(formData)
+    });
+
+    if (response.ok) {
+      const waitlistForm = document.getElementById('waitlist-form');
+      const success = document.getElementById('modal-success');
+      if (waitlistForm) waitlistForm.style.display = 'none';
+      if (success) success.style.display = '';
+    } else {
+      throw new Error('Submission failed');
+    }
+  } catch (error) {
+    console.error("FormSubmit Error:", error);
+    btn.textContent = 'Try Again';
+    btn.disabled = false;
+    alert("Something went wrong. Please try again or email us at hello@automa8.io");
+  }
+}
+
+async function handleContact(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('.btn-send');
+  const orig = btn.textContent;
+  
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  const nameVal = form.querySelector('input[type="text"]').value;
+  const emailVal = form.querySelector('input[type="email"]').value;
+  const messageVal = form.querySelector('textarea').value;
+
+  const formData = {
+    name: nameVal,
+    email: emailVal,
+    message: messageVal,
+    _subject: `[Automa8 Financial] ${nameVal} submitted the contact form`,
+    _template: "table"
+  };
+
+  try {
+    const response = await fetch("https://formsubmit.co/ajax/joellobo2007@gmail.com", {
+      method: "POST",
+      headers: { 
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(formData)
+    });
+
+    if (response.ok) {
+      btn.textContent = '✓ Message Sent!';
+      btn.style.background = '#0d9668';
+      setTimeout(() => {
+        form.reset();
+        btn.textContent = orig;
+        btn.disabled = false;
+        btn.style.background = '';
+      }, 3000);
+    } else {
+      throw new Error('Submission failed');
+    }
+  } catch (error) {
+    console.error("FormSubmit Error:", error);
+    btn.textContent = 'Error - Try Again';
+    btn.disabled = false;
+    btn.style.background = '#dc2626';
+    setTimeout(() => {
+      btn.textContent = orig;
+      btn.style.background = '';
+    }, 3000);
+  }
 }
