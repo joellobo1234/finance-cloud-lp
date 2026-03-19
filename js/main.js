@@ -141,6 +141,14 @@ async function handleWaitlist(e) {
   const emailVal = document.getElementById('wl-email').value;
   const planVal = document.getElementById('wl-plan').value;
 
+  // Validation
+  if (/\d/.test(nameVal)) {
+    alert("Full name should not contain numbers");
+    btn.textContent = 'Try Again';
+    btn.disabled = false;
+    return;
+  }
+
   const formData = {
     name: nameVal,
     email: emailVal,
@@ -187,6 +195,23 @@ async function handleContact(e) {
   const nameVal = form.querySelector('input[type="text"]').value;
   const emailVal = form.querySelector('input[type="email"]').value;
   const messageVal = form.querySelector('textarea').value;
+
+  // Validation
+  if (/\d/.test(nameVal)) {
+    alert("Name should not contain numbers");
+    btn.textContent = 'Error - Name';
+    btn.disabled = false;
+    setTimeout(() => { btn.textContent = orig; }, 2000);
+    return;
+  }
+
+  if (messageVal.length > 1000) {
+    alert("Message is too long (max 1000 characters)");
+    btn.textContent = 'Too Long';
+    btn.disabled = false;
+    setTimeout(() => { btn.textContent = orig; }, 2000);
+    return;
+  }
 
   const formData = {
     name: nameVal,
